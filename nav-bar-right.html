@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+    
+    .main {
+        width: 100%;
+        height: 1000px;
+    }
+    
+    .nav-main {
+        width: 100%;
+        height: 80px;
+        background-color: gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo>a {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .content>ul {
+        display: flex;
+    }
+    
+    .content>ul>li {
+        margin-right: 100px;
+    }
+    
+    .content>ul>li>a {
+        color: white;
+        background-color: pink;
+        padding: 10px 20px 10px 20px;
+        border-radius: 10px;
+    }
+    
+    .lines>.line {
+        width: 20px;
+        height: 3px;
+        background-color: black;
+        margin: 5px;
+    }
+    
+    .lines {
+        display: block;
+        margin-right: 20px;
+    }
+    
+    @media screen and (max-width:415px) {
+        .content>ul {
+            display: block;
+            width: 100%;
+            height: 300px;
+            margin-top: 30px;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            visibility: hidden;
+            transition: 0.5s ease-in-out;
+        }
+        .content>ul>li {
+            padding: 10px 0px 10px 0px;
+            margin-top: 30px;
+            text-align: center;
+            width: 100%;
+            height: 20px;
+        }
+        .content>ul>li:hover {
+            background-color: gray;
+            transform: translateY(-3px);
+            transition: ease-in-out 0.5s;
+        }
+        .content>ul>li>a:hover {
+            color: red;
+        }
+        .content>ul>li>a {
+            background: none;
+            font-size: 20px;
+        }
+        .lines {
+            cursor: pointer;
+        }
+        .content>ul.show {
+            background-color: black;
+            opacity: 0.9;
+            visibility: visible;
+            transition: 0.5s ease-in-out;
+        }
+    }
+</style>
+
+<body>
+    <div class="main">
+        <nav>
+            <div class="nav-main">
+                <div class="logo">
+                    <a href="">LOGO</a>
+                </div>
+
+                <div class="content">
+                    <ul>
+                        <li>
+                            <a href="">Home</a>
+                        </li>
+                        <li>
+                            <a href="">Main</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </nav>
+        <article>
+            <div class="main-article">
+                <p> i think work code this i make </p>
+            </div>
+        </article>
+    </div>
+</body>
+<script>
+    let lines = document.querySelector(".lines");
+    let navLinks = document.querySelector(".content>ul");
+
+    lines.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+</script>
+
+</html>
